@@ -72,7 +72,7 @@ def service(message):
     if check_inject_bash(service):
         bot.reply_to(message, 'WARNING-Inject detect')
         return
-    msg = bash('service ' + command + ' ' + service)
+    msg = bash('service ' + service + ' ' + command)
     bot.reply_to(message, '\n' + msg)
 
 @bot.message_handler(commands = ['deploy'])
